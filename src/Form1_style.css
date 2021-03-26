@@ -17,6 +17,7 @@
 .form-v1 h3{
     font-size: 22px;
     margin-bottom: 28px;
+    
 }
 
 /* input text styling */
@@ -101,7 +102,7 @@ select{
     padding-top: 15px;
     cursor: pointer;
 }
-.img1-div{
+/* .img1-div{
     position: absolute;
     width: 387px;
     height: 154px;
@@ -111,13 +112,13 @@ select{
     animation: img_anim1 3s   infinite;
 }
 .img2-div{
-    width: 500px;
+    width: 350px;
     height: 80px;
     margin-top: -40px;
     margin-left: 30px;
     background-image: url('./images/Path\ 1000@1X.png');
     animation: img_anim2 3s   infinite;
-}
+} */
 @keyframes img_anim1{
     0%{
         right: -100px;

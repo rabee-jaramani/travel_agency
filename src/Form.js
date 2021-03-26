@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import nationality_json from './nationality.json'
 import countries_json from './countries.json'
+import {industries_list} from './industries'
 // importing the icons
 import N0 from './images/no.png'
 import YES from './images/yes.png'
@@ -15,6 +16,7 @@ import family from './images/family.png'
 import finance from './images/finance.png'
 import security from './images/security.png'
 import tourism from './images/tourism.png'
+import OPTION from './OPTION'
 
 
 
@@ -44,9 +46,12 @@ export default function Form() {
     const [want_to_stay, setWant_to_stay] = useState('')
  
     //formv1-2
-    const [why_dubai, setWhy_dubai] = useState([])
+    const [why_dubai, setWhy_dubai] = useState([]);
 
-   
+    //form-v1-3
+    const [what_industries, setWhat_industries] = useState([]);
+    // list for industries
+
 
 
     function get_nationalities(){
@@ -102,9 +107,23 @@ export default function Form() {
         // }
 
     }
+    function  back_toform_v1_2(){
+        // validation
+        // if(visited_dubai && any_friends && want_to_stay){
+        document.querySelector('.form-v1-2').classList.toggle('hide-display');
+        document.querySelector('.form-v1-3').classList.toggle('hide-display');
+
+        // }
+        // else{
+            // alert('Please answer the questions')
+        // }
+
+    }
+   
 
 
     function to_form_v1_3(){
+        document.getElementById('bar3').style.width='37.5%';
         document.querySelector('.form-v1-2').classList.toggle('hide-display');
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
 
@@ -117,9 +136,16 @@ export default function Form() {
         }
         else{
             console.log(why_dubai)
+        }   
+    }
+    function what_industries_handler(e) {
+        if(!what_industries.includes(e.target.textContent))
+        {
+            setWhat_industries([...what_industries,e.target.textContent]);
         }
-        
-       
+        else{
+            console.log(what_industries)
+        }   
     }
     // function backToform_v1(){
     //     document.querySelector('.form-v1').classList.add('hide-display');
@@ -389,7 +415,10 @@ export default function Form() {
                     Family
                     </label>
                 </div>
-                <div className='option' >
+               </div>
+
+               <div className='options'>
+               <div className='option' >
                     <input type="checkbox" class="btn-hidden" name="cb17" id="cb17"/>
                     <label for="cb17" onClick={why_dubai_handler}>
                     <img className='icon' alt='' src={business}></img>
@@ -411,7 +440,6 @@ export default function Form() {
                     Culture
                     </label>
                 </div>
-
                 </div>
 
 
@@ -444,19 +472,16 @@ export default function Form() {
             <div className='question-div'>
                 <div className='question'>What industries would you prefer towork in?</div>
 
-                <div className='options'>
-
-               
-                </div>
-                <div className='options'>
-
-  
-                
-                </div>
-                <div className='options'>
-
-                
-
+                <div className='options options-grid'>
+               {
+                   industries_list.map((element)=>{
+                       return <OPTION name={element.name}
+                       img={element.img}
+                       what_industries_handler={what_industries_handler}
+                       cb={element.cb}
+                       />
+                   })
+               }
                 </div>
 
             </div>
@@ -464,7 +489,7 @@ export default function Form() {
 
          
             <div className='next-back-div'>
-                <div className='back-btn' onClick={back_toform_v1_1}>back</div>
+            <div className='back-btn' onClick={back_toform_v1_2}>back</div>
             <div className='btn' onClick={to_form_v1_3}>Next</div>
             </div>
 
