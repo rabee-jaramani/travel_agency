@@ -1,0 +1,142 @@
+
+.form-v1{
+    position: relative;
+    width: 400px;
+    height: 789px !important;
+   overflow: hidden !important;
+    padding-left: 17px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    transition: .5s;
+}
+.digg{
+    font-size: 42px;
+    margin: 0 0 54px 0;
+    font-weight: 600;
+}
+.form-v1 h3{
+    font-size: 22px;
+    margin-bottom: 28px;
+}
+
+/* input text styling */
+.input-div,select {
+    position: relative;
+    margin: 0px 2.5px 12px 2.5px;
+    width: 95%;
+}
+.form-v1 .img1 {
+    position: absolute;
+    left: 116px;
+    top: -10px;
+}
+.input-div input,select {
+    width: 95%;
+    display: inline-block;
+    height: 40px;
+    border: none;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.input-div input:focus {
+    border: 1px solid #614CE5 !important;
+    }
+ select:focus {
+        border: 1px solid #614CE5 !important;
+        }
+    
+
+.input-div label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 10px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.input-div input:focus ~ label, .input-div input:valid ~ label {
+    top: 0px;
+    left: 0px;
+    font-size: 11px;
+    padding:0 5px 0 5px;
+    color: #614CE5;
+}
+/* End of input text styling */
+.gender-div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.gender-div p{
+    margin-bottom: 10px;
+}
+.gender-div label{
+margin-right: 27px;
+margin-left: 2px;
+
+}
+select{
+    margin-bottom: 17px;
+}
+.contact{
+    margin-top: 10px;
+    
+}
+.contact-title{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.btn{
+    margin-top: 28px;
+    width: 137px;
+    height: 49px;
+    background:linear-gradient(to right,rgb(76,51,226),rgb(134,40,233));
+    color: #EFEFEF;
+    border-radius: 30px;
+    text-align: center;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.img1-div{
+    position: absolute;
+    width: 387px;
+    height: 154px;
+   top: -10px;
+   right: -100px;
+    background-image: url('./images/Path\ 970@1X.png');
+    animation: img_anim1 3s   infinite;
+}
+.img2-div{
+    width: 500px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: 30px;
+    background-image: url('./images/Path\ 1000@1X.png');
+    animation: img_anim2 3s   infinite;
+}
+@keyframes img_anim1{
+    0%{
+        right: -100px;
+    }
+    50%{
+        right: -50px;
+    }
+    100%{
+        right: -100px;
+    }
+}
+@keyframes img_anim2{
+    0%{
+        margin-left: 30px;
+    }
+    50%{
+        margin-left: 15px;
+    }
+    100%{
+        right: 30px;
+    }
+}
