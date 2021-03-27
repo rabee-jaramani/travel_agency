@@ -15,11 +15,12 @@ import family from './images/family.png'
 import finance from './images/finance.png'
 import security from './images/security.png'
 import tourism from './images/tourism.png'
-import FORM_V1 from './FORM_V1'
-import FORM_V1_1 from './FORM_V1_1'
-import FORM_V1_8 from './FORM_V1_8'
-import FORM_V1_2 from './FORM_V1_2'
-import FORM_V1_3 from './FORM_V1_3'
+import FORM_V1 from './Form_v1/FORM_V1'
+import FORM_V1_1 from './Form_v1_1/FORM_V1_1'
+import FORM_V1_8 from './Form_v1_8/FORM_V1_8'
+import FORM_V1_2 from './Form_v1_2/FORM_V1_2'
+import FORM_V1_3 from './Form_v1_3/FORM_V1_3'
+import FORM_V1_4 from './Form_v1_4/FORM_V1_4'
 
 
 
@@ -50,7 +51,8 @@ export default function Form() {
 
     //form-v1-3
     const [what_industries, setWhat_industries] = useState([]);
-
+    // form-v1-4
+    const [savings, setSavings] = useState([]);
 
 
     function get_nationalities(e){
@@ -84,21 +86,22 @@ export default function Form() {
     }
 
     function toform_v1_1(){
-        if(firstname==='' || lastname==='' ||  birthdate==='' || username==='' || gender==='' || 
-         nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
-               {
-                alert('all fields are mandatory');
-                 }else
-        if(!check_regex(firstname)||!check_regex(lastname)){
-            alert('Name and last name can be letters only');
-        }
-        else{
+        // if(firstname==='' || lastname==='' ||  birthdate==='' || username==='' || gender==='' || 
+        //  nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
+        //        {
+        //         alert('all fields are mandatory');
+        //          }else
+        // if(!check_regex(firstname)||!check_regex(lastname)){
+        //     alert('Name and last name can be letters only');
+        // }
+        // else{
             
-            setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},500);
-            setTimeout(()=>{ document.querySelector('.form-v1-1').classList.toggle('hide-display')},500);
+            setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},1000);
+            setTimeout(()=>{ document.querySelector('.form-v1-1').classList.toggle('hide-display')},1000);
            document.querySelector('.f-v-1').classList.toggle('form-anim');
            document.querySelector('.sec2').classList.toggle('hide-display');
-        }
+                   
+        // }
 
     }
     function back_toform_v1_1(){
@@ -138,17 +141,24 @@ export default function Form() {
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
 
     }
+    function to_form_v1_4(){
+        document.getElementById('bar4').style.width='50%';
+        document.querySelector('.form-v1-3').classList.toggle('hide-display');
+        document.querySelector('.form-v1-4').classList.toggle('hide-display');
+    }
+    function back_to_form_v1_4(){
+        document.querySelector('.form-v1-4').classList.toggle('hide-display');
+        document.querySelector('.form-v1-5').classList.toggle('hide-display');
+    }
     function to_form_v1_8() {
         document.getElementById('bar8').style.width='95%';
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
         document.querySelector('.form-v1-8').classList.toggle('hide-display');
 
-        
-        
     }
     function back_toform_v1_3() {
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
-        document.querySelector('.form-v1-8').classList.toggle('hide-display');
+        document.querySelector('.form-v1-4').classList.toggle('hide-display');
     }
     
     function why_dubai_handler(e){
@@ -163,6 +173,19 @@ export default function Form() {
             console.log(why_dubai)
         }   
     }
+    
+    function savings_handler(e) {
+        if(!savings.includes(e.target.textContent))
+        {
+            if(savings.length===-1){
+                setSavings([e.target.textContent]);
+            }
+            setSavings([...savings,e.target.textContent]);
+        }
+        else{
+            console.log(savings)
+        }   
+    }
     function what_industries_handler(e) {
         if(!what_industries.includes(e.target.textContent))
         {
@@ -175,10 +198,12 @@ export default function Form() {
             console.log(what_industries)
         }   
     }
-    // function backToform_v1(){
-    //     document.querySelector('.form-v1').classList.add('hide-display');
-    //     document.querySelector('.form-v1-1').classList.remove('hide-opacity');
-    // }
+    function backToform_v1(){
+        document.querySelector('.form-v1').classList.toggle('hide-display');
+        document.querySelector('.form-v1-1').classList.toggle('hide-display');
+       document.querySelector('.f-v-1').classList.toggle('form-anim');
+       document.querySelector('.sec2').classList.toggle('hide-display');
+    }
     return (
         <>
         <FORM_V1
@@ -203,7 +228,7 @@ export default function Form() {
         YES={YES}
         setAny_friends={setAny_friends}
         setWant_to_stay={setWant_to_stay}
-        toform_v1_1={toform_v1_1}
+        backToform_v1={backToform_v1}
         toform_v1_2={toform_v1_2}
         file={file}
         />
@@ -228,8 +253,13 @@ export default function Form() {
             <FORM_V1_3
             industries_list={industries_list}
             back_toform_v1_2={back_toform_v1_2}
-            to_form_v1_8={to_form_v1_8}
+            to_form_v1_4={to_form_v1_4}
             what_industries_handler={what_industries_handler}
+            />
+            <FORM_V1_4
+            back_toform_v1_3={back_toform_v1_3}
+            to_form_v1_8={to_form_v1_8}
+            savings_handler={savings_handler}
             />
             <FORM_V1_8
              N0={N0}

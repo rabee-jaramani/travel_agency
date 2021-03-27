@@ -1,0 +1,11 @@
+
+@media(min-width:1350px){
+#coins-grid{
+    grid-template-columns: repeat( 5, minmax(200px, 1fr) ) !important;
+    grid-template-rows: .15fr .15fr .15fr;
+    gap: 0px 0 !important;
+    height: 50vh;
+    overflow-y: auto;
+    
+}
+}

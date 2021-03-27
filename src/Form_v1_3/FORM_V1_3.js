@@ -1,5 +1,5 @@
 import React from 'react'
-import OPTION from './OPTION'
+import OPTION from '../Option_component/OPTION'
 
 export default function FORM_V1_3(props) {
     return (
@@ -10,7 +10,7 @@ export default function FORM_V1_3(props) {
             <div className='digg'>digg</div>
 
             <div className='progress-div'>
-                <div id='bar3' className='progress-bar '></div>
+                <div id='bar3' className='progress-bar '><h4>Progress</h4></div>
             </div>
 
              <div className='questions-container'>
@@ -33,7 +33,7 @@ export default function FORM_V1_3(props) {
             </div>
             <div className='next-back-div'>
             <div className='back-btn' onClick={props.back_toform_v1_2}>back</div>
-            <div className='btn' onClick={props.to_form_v1_8}>Next</div>
+            <div className='btn' onClick={props.to_form_v1_4}>Next</div>
             </div>
 
 

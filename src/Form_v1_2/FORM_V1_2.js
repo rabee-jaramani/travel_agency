@@ -9,7 +9,7 @@ export default function FORM_V1_2(props) {
             <div className='digg'>digg</div>
 
             <div className='progress-div'>
-                <div id='bar2' className='progress-bar '></div>
+                <div id='bar2' className='progress-bar '><h4>Progress</h4></div>
             </div>
 
              <div className='questions-container'>

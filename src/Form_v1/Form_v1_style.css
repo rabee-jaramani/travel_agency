@@ -1,4 +1,9 @@
 @media(min-width:1350px){
+    .digg{
+        position: relative;
+        top: 20px;
+        left: 30px;
+    }
     #form-v1{
         width: 50%;
         margin-left: 75%;
@@ -9,11 +14,11 @@
         height: 100vh;
         left: 0 !important;
         top: 0 !important;
-        background-image: url('./images/background.png');
+        background-image: url('../images/background.png');
         background-size: cover;
     }
-    .digg{
-        opacity: 0;
+    #digg1{
+        color: white;
     }
     .input-div{
         width: 18vw !important;
@@ -63,6 +68,7 @@
 .form-anim{
     animation: form_anim 1s;
 }
+
 @keyframes form_anim{
     0%{
         left: 0
@@ -71,6 +77,7 @@
         left: -2000px;
     }
 }
+
 .digg{
     font-size: 42px;
     margin: 0 0 54px 0;
@@ -177,7 +184,7 @@ select{
     height: 154px;
    top: -10px;
    right: -100px;
-    background-image: url('./images/Path\ 970@1X.png');
+    background-image: url('../images/Path\ 970@1X.png');
     animation: img_anim1 3s   infinite;
 }
 .img2-div{
@@ -185,7 +192,7 @@ select{
     height: 80px;
     margin-top: -40px;
     margin-left: 30px;
-    background-image: url('./images/Path\ 1000@1X.png');
+    background-image: url('../images/Path\ 1000@1X.png');
     animation: img_anim2 3s   infinite;
 }
 @keyframes img_anim1{

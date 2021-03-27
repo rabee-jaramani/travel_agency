@@ -5,10 +5,11 @@ export default function FORM_V1_1(props) {
         <>
            <section className='form-v1 form-v1-1 hide-display'>
            
-            <div className='digg'>digg</div>
+            <div  className='digg'>digg</div>
 
-            <div className='progress-div'>
-                <div  className='progress-bar '></div>
+            <div id='progress-div' className='progress-div'>
+               
+                <div  className='progress-bar '> <h4>Progress</h4></div>
             </div>
 
              <div className='questions-container'>
@@ -113,7 +114,7 @@ export default function FORM_V1_1(props) {
 
             </div>
             <div className='next-back-div'>
-                <div className='back-btn' onClick={props.toform_v1_1}>back</div>
+                <div className='back-btn' onClick={props.backToform_v1}>back</div>
             <div className='btn' onClick={props.toform_v1_2}>Next</div>
             </div>
 

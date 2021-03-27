@@ -5,7 +5,7 @@ export default function FORM_V1(props) {
         <>
             <section className='form-v1 f-v-1' id='form-v1'>
             <div className='img1-div' ></div>
-            <h1 className='digg'>digg</h1>
+            <h1 id='digg1' className='digg'>digg</h1>
             <h3 id='apply-now-title'>Apply now to work in Dubai </h3>
             <div class="input-div" id='f1'>
                 <input type="text" onChange={(e)=>props.setFirstname(e.target.value)} required/>
