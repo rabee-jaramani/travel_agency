@@ -110,14 +110,14 @@ export default function Form() {
     }
     function  back_toform_v1_2(){
         // validation
-        // if(visited_dubai && any_friends && want_to_stay){
+        if(visited_dubai && any_friends && want_to_stay){
         document.querySelector('.form-v1-2').classList.toggle('hide-display');
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
 
-        // }
-        // else{
-            // alert('Please answer the questions')
-        // }
+        }
+        else{
+            alert('Please answer the questions')
+        }
 
     }
    
