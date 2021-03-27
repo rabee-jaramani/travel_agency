@@ -53,12 +53,14 @@ export default function Form() {
 
 
 
-    function get_nationalities(){
+    function get_nationalities(e){
+        
         var result=[];
               for(var i in nationality_json){
                   result.push([nationality_json[i]]);
               }
               setNationalities(result);
+             
     }
 
     function get_countries(){
@@ -73,19 +75,22 @@ export default function Form() {
               setCountries(list_cnt);
     }
 
+    // function to check the regular expressions
+    function check_regex(letters){
+        if(!(/^(?! )[A-Za-z\s]*$/.test(letters))){
+            return false;
+            }
+        return true;
+    }
+
     function toform_v1_1(){
-        if(firstname==='' ||
-            lastname==='' ||
-            birthdate==='' ||
-            username==='' ||
-            gender==='' ||
-            nationality===''||
-            countryofresidence===''||
-            contactnumber===''||
-            email==='' )    
+        if(firstname==='' || lastname==='' ||  birthdate==='' || username==='' || gender==='' || 
+         nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
                {
-                alert('all fields are mandatory')
-       
+                alert('all fields are mandatory');
+                 }
+        if(!check_regex(firstname)||!check_regex(lastname)){
+            alert('Name and last name can be letters only');
         }
         else{
             setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},500);

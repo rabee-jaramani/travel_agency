@@ -28,11 +28,8 @@
 .options{
     margin-bottom: 25px;
     display: flex;
- 
-    /* overflow-x: auto !important; */
-  
+
 }
-/* .options::-webkit-scrollbar {    display: block !important;} */
 
 .option{
     margin-bottom: 10px;   
