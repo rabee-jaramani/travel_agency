@@ -3,16 +3,16 @@ import React from 'react'
 export default function FORM_V1(props) {
     return (
         <>
-            <section className='form-v1 f-v-1'>
+            <section className='form-v1 f-v-1' id='form-v1'>
             <div className='img1-div' ></div>
             <h1 className='digg'>digg</h1>
-            <h3>Apply now to work in Dubai </h3>
-            <div class="input-div">
+            <h3 id='apply-now-title'>Apply now to work in Dubai </h3>
+            <div class="input-div" id='f1'>
                 <input type="text" onChange={(e)=>props.setFirstname(e.target.value)} required/>
                 <label>First name</label>
             </div>
-            <div class="input-div">
-                <input type="text" onChange={(e)=>props.setLastname(e.target.value)} required/>
+            <div id='lname' class="input-div">
+                <input  type="text" onChange={(e)=>props.setLastname(e.target.value)} required/>
                 <label>Last name</label>
             </div>
             <div class="input-div">
@@ -20,7 +20,7 @@ export default function FORM_V1(props) {
                     min="1920-01-01" max="2015-12-31"></input>
             <label>Date of birth</label>
             </div>
-            <div class="input-div">
+            <div id='username' class="input-div">
                 <input type="text" onChange={(e)=>props.setUsername(e.target.value)} required/>
                 <label>User name</label>
             </div>
@@ -62,11 +62,12 @@ export default function FORM_V1(props) {
             </div>
             </div>
             
-           <div className='btn' onClick={props.toform_v1_1}>Apply Now</div>
+           <div id='apply-btn' className='btn' onClick={props.toform_v1_1}>Apply Now</div>
            <div className='img2-div' ></div>
            
         
             </section>
+            <section className='sec2'></section>
 {/* /////////////////////////////////End of form-v1////////////////////////////////////////////////////////////// */}
 
         </>

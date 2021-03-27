@@ -1,3 +1,54 @@
+@media(min-width:1350px){
+    #form-v1{
+        width: 50%;
+        margin-left: 75%;
+    }
+    .sec2{
+        position: absolute !important;
+        width: 50%;
+        height: 100vh;
+        left: 0 !important;
+        top: 0 !important;
+        background-image: url('./images/background.png');
+        background-size: cover;
+    }
+    .digg{
+        opacity: 0;
+    }
+    .input-div{
+        width: 18vw !important;
+    }
+    #nationality,#country{
+        width: 17.2vw !important;
+        margin-right: 2.7vw;
+    }
+    
+    #lname{
+        position: absolute;
+        right: 10.3vw;
+        top: 165px;
+    }
+    #username{
+        position: absolute;
+        right: 10.3vw;
+        top: 215px;
+    }
+    .gender-div{
+        position: absolute;
+        top: 350px;
+        right: 10vw;
+    }
+    #apply-btn{
+        margin-left: 28vw;
+        margin-bottom: 370px;
+        width: 10vw;
+    }
+    #apply-now-title{
+        font-size: 29px;
+        font-weight: 700;
+        margin-left: 8vw;
+    }
+}
 
 .form-v1{
     position: relative;
@@ -8,7 +59,6 @@
     margin-left: 50%;
     transform: translate(-50%);
     transition: .5s;
-    
 }
 .form-anim{
     animation: form_anim 1s;
@@ -18,7 +68,7 @@
         left: 0
     }
     100%{
-        left: -500px;
+        left: -2000px;
     }
 }
 .digg{
@@ -29,7 +79,6 @@
 .form-v1 h3{
     font-size: 22px;
     margin-bottom: 28px;
-    
 }
 
 /* input text styling */
@@ -62,8 +111,11 @@
         border: 1px solid #614CE5 !important;
         }
     
-#nationality,#country{
-    width: 90% !important;
+#nationality{
+    width: 90%;
+}
+#country{
+    width: 90%;
 }
 .input-div label {
     position: absolute;

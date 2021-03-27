@@ -77,10 +77,10 @@ export default function Form() {
 
     // function to check the regular expressions
     function check_regex(letters){
-        if(!(/^(?! )[A-Za-z\s]*$/.test(letters))){
-            return false;
+        if((/^(?! )[A-Za-z\s]*$/.test(letters))){
+            return true;
             }
-        return true;
+        return false;
     }
 
     function toform_v1_1(){
@@ -88,14 +88,16 @@ export default function Form() {
          nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
                {
                 alert('all fields are mandatory');
-                 }
+                 }else
         if(!check_regex(firstname)||!check_regex(lastname)){
             alert('Name and last name can be letters only');
         }
         else{
+            
             setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},500);
             setTimeout(()=>{ document.querySelector('.form-v1-1').classList.toggle('hide-display')},500);
            document.querySelector('.f-v-1').classList.toggle('form-anim');
+           document.querySelector('.sec2').classList.toggle('hide-display');
         }
 
     }
