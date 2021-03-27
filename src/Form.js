@@ -73,22 +73,22 @@ export default function Form() {
     }
 
     function toform_v1_1(){
-        // validation
-        if(!firstname==''&&
-            !lastname==''&&
-            !birthdate==''&&
-            !username==''&&
-            !gender==''&&
-            !nationality==''&
-            !countryofresidence==''&
-            !contactnumber==''&
-            !email=='' )    
+        if(firstname==='' ||
+            lastname==='' ||
+            birthdate==='' ||
+            username==='' ||
+            gender==='' ||
+            nationality===''||
+            countryofresidence===''||
+            contactnumber===''||
+            email==='' )    
                {
-        document.querySelector('.form-v1').classList.toggle('hide-display');
-        document.querySelector('.form-v1-1').classList.toggle('hide-display');
+                alert('all fields are mandatory')
+       
         }
         else{
-            alert('all fields are mandatory')
+            document.querySelector('.form-v1').classList.toggle('hide-display');
+            document.querySelector('.form-v1-1').classList.toggle('hide-display');
         }
 
     }
