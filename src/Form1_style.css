@@ -2,8 +2,9 @@
 .form-v1{
     position: relative;
     width: 400px;
-    height: 789px !important;
+    height: auto !important;
    overflow: hidden !important;
+   
     padding-left: 17px;
     margin-left: 50%;
     transform: translate(-50%);
@@ -50,7 +51,9 @@
         border: 1px solid #614CE5 !important;
         }
     
-
+#nationality,#country{
+    width: 90% !important;
+}
 .input-div label {
     position: absolute;
     pointer-events: none;

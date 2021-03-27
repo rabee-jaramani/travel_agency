@@ -17,6 +17,7 @@ import finance from './images/finance.png'
 import security from './images/security.png'
 import tourism from './images/tourism.png'
 import OPTION from './OPTION'
+import FORM_V1 from './FORM_V1'
 
 
 
@@ -153,73 +154,22 @@ export default function Form() {
     // }
     return (
         <>
-            <section className='form-v1 '>
-            <div className='img1-div' ></div>
-            <h1 className='digg'>digg</h1>
-            <h3>Apply now to work in Dubai </h3>
-            <div class="input-div">
-                <input type="text" onChange={(e)=>setFirstname(e.target.value)} required/>
-                <label>First name</label>
-            </div>
-            <div class="input-div">
-                <input type="text" onChange={(e)=>setLastname(e.target.value)} required/>
-                <label>Last name</label>
-            </div>
-            <div class="input-div">
-            <input type="date" id="dateOfBirth" onChange={(e)=>setBirthdate(e.target.value)} name="trip-start"
-                    min="1920-01-01" max="2015-12-31"></input>
-            <label>Date of birth</label>
-            </div>
-            <div class="input-div">
-                <input type="text" onChange={(e)=>setUsername(e.target.value)} required/>
-                <label>User name</label>
-            </div>
-            <div className='gender-div'>
-                <p>Gender</p>
-                <input type="checkbox" onChange={e=>setGender('Male')}/>
-                <label>Male</label>
-
-                <input type="checkbox" onChange={e=>setGender('Female')}/>
-                <label>Female</label>
-
-                <input type="checkbox" onChange={e=>setGender('Other')}/>
-                <label>Other</label>
-            </div>
-            <select id='nationality' onClick={get_nationalities} onMouseOver={get_nationalities}  onChange={e=>setNtionality(e.target.value)}>
-                        <option className='dropdown-placeholder' value=""
-                    
-                         disabled selected>Nationality</option>
-                            {nationalities.map((country)=>{
-                            return <option > {country} </option>
-                            })}              
-            </select>
-
-            <select id='country' onClick={get_countries} onMouseOver={get_countries}  onChange={e=>setCountryofresidence(e.target.value)}>
-                        <option className='dropdown-placeholder' value="" disabled selected>Country of risedence</option>
-                            {countries.map((country)=>{
-                            return <option > {country} </option>
-                            })}              
-             </select>
-            <div className='contact'>
-                <div className='contact-title'>How we can contact you?</div> 
-            <div class="input-div">
-                <input type="text" onChange={e=>setContactnumber(e.target.value)} required/>
-                <label>Contact number</label>
-            </div>
-            <div class="input-div">
-                <input type="text" onChange={e=>setEmail(e.target.value)} required/>
-                <label>Email address</label>
-            </div>
-            </div>
-            
-           <div className='btn' onClick={toform_v1_1}>Apply Now</div>
-           <div className='img2-div' ></div>
- {/* <img id='formv1_img2' src={formv1_img2}></img> */}
-           
-        
-            </section>
-{/* /////////////////////////////////End of form-v1////////////////////////////////////////////////////////////// */}
-
+        <FORM_V1
+            setFirstname={setFirstname}
+            setLastname={setLastname}
+            setBirthdate={setBirthdate}
+            setUsername={setUsername}
+            setGender={setGender}
+            get_nationalities={get_nationalities}
+            setNtionality={setNtionality}
+            get_countries={get_countries}
+            setCountryofresidence={setCountryofresidence}
+            nationalities={nationalities}
+            countries={countries}
+            setContactnumber={setContactnumber}
+            setEmail={setEmail}
+            toform_v1_1={toform_v1_1}
+        />
 {/* ///////////////////////////////////////Start of form-v1-1/////////////////////////////////////////////////////////// */}
             <section className='form-v1 form-v1-1 hide-display'>
             {/* <div className='img1-div' ></div> */}
@@ -485,9 +435,6 @@ export default function Form() {
                 </div>
 
             </div>
-    
-
-         
             <div className='next-back-div'>
             <div className='back-btn' onClick={back_toform_v1_2}>back</div>
             <div className='btn' onClick={to_form_v1_3}>Next</div>
