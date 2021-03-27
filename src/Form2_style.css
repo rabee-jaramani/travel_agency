@@ -81,7 +81,7 @@
     display: grid;
     grid-template-columns: repeat( 8, minmax(180px, 1fr) );
     grid-template-rows: .15fr .15fr .15fr;
-    gap: -10px 0 !important;
+    gap: 0px 0 !important;
     height: 50vh;
     overflow-y: auto;
     
