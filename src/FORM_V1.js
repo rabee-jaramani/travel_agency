@@ -3,7 +3,7 @@ import React from 'react'
 export default function FORM_V1(props) {
     return (
         <>
-            <section className='form-v1 '>
+            <section className='form-v1 f-v-1'>
             <div className='img1-div' ></div>
             <h1 className='digg'>digg</h1>
             <h3>Apply now to work in Dubai </h3>

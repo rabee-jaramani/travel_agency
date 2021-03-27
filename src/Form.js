@@ -15,10 +15,11 @@ import family from './images/family.png'
 import finance from './images/finance.png'
 import security from './images/security.png'
 import tourism from './images/tourism.png'
-import OPTION from './OPTION'
 import FORM_V1 from './FORM_V1'
 import FORM_V1_1 from './FORM_V1_1'
 import FORM_V1_8 from './FORM_V1_8'
+import FORM_V1_2 from './FORM_V1_2'
+import FORM_V1_3 from './FORM_V1_3'
 
 
 
@@ -87,8 +88,9 @@ export default function Form() {
        
         }
         else{
-            document.querySelector('.form-v1').classList.toggle('hide-display');
-            document.querySelector('.form-v1-1').classList.toggle('hide-display');
+            setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},500);
+            setTimeout(()=>{ document.querySelector('.form-v1-1').classList.toggle('hide-display')},500);
+           document.querySelector('.f-v-1').classList.toggle('form-anim');
         }
 
     }
@@ -199,160 +201,29 @@ export default function Form() {
         file={file}
         />
 
-            {/* ///////////////////////////////////////Start of form-v1-2/////////////////////////////////////////////////////////// */}
-            <section className='form-v1 form-v1-2 hide-display'>
-            {/* <div className='img1-div' ></div> */}
-            <div className='digg'>digg</div>
 
-            <div className='progress-div'>
-                <div id='bar2' className='progress-bar '></div>
-            </div>
+        <FORM_V1_2
+        why_dubai_handler={why_dubai_handler}
+        life_style={life_style}
+        Work_opportunities={Work_opportunities}
+        education={education}
+        finance={finance}
+        tourism={tourism}
+        family={family}
+        business={business}
+        security={security}
+        culture={culture}
+        back_toform_v1_1={back_toform_v1_1}
+        to_form_v1_3={to_form_v1_3}
 
-             <div className='questions-container'>
+        />
 
-            <div className='question-div'>
-                <div className='question'>Why do you want to come to dubai?</div>
-                <div className='options'>
-
-                    <div className='option'  >
-                        <input type="checkbox" class="btn-hidden" name="cb10" id="cb10"/>
-                        <label for="cb10" onClick={why_dubai_handler}>
-                        <img className='icon' alt='' src={life_style}></img>
-                        Lifestyle
-                        </label>
-                    </div>
-
-                    <div className='option' >
-                        <input type="checkbox" class="btn-hidden" name="cb11" id="cb11"/>
-                        <label for="cb11" onClick={why_dubai_handler}>
-                        <img className='icon' alt='' src={Work_opportunities}></img>
-                        Work opportunities
-                        </label>
-                    </div>
-                </div>
-                <div className='options'>
-
-                <div className='option'  >
-                    <input type="checkbox" class="btn-hidden" name="cb12" id="cb12"/>
-                    <label for="cb12" onClick={why_dubai_handler}>
-                    <img className='icon' alt='' src={education}></img>
-                    Education
-                    </label>
-                </div>
-
-                <div className='option'>
-                    <input type="checkbox" class="btn-hidden" name="cb13" id="cb13"/>
-                    <label for="cb13" onClick={why_dubai_handler}>
-                    <img className='icon' alt='' src={education}></img>
-                    Education
-                    </label>
-                </div>
-                
-                </div>
-                <div className='options'>
-
-                <div className='option' >
-                    <input type="checkbox" class="btn-hidden" name="cb14" id="cb14"/>
-                    <label for="cb14" onClick={why_dubai_handler}>
-                    <img className='icon' alt='' src={finance}></img>
-                    Finance
-                    </label>
-                </div>
-
-                <div className='option'>
-                    <input type="checkbox" class="btn-hidden" name="cb15" id="cb15"/>
-                    <label for="cb15" onClick={why_dubai_handler}>
-                    <img className='icon tourism-icon' alt='' src={tourism}></img>
-                    Tourism
-                    </label>
-                </div>
-                <div className='option'>
-                    <input type="checkbox" class="btn-hidden" name="cb16" id="cb16"/>
-                    <label for="cb16" onClick={why_dubai_handler}>
-                    <img className='icon' alt='' src={family}></img>
-                    Family
-                    </label>
-                </div>
-               </div>
-
-               <div className='options'>
-               <div className='option' >
-                    <input type="checkbox" class="btn-hidden" name="cb17" id="cb17"/>
-                    <label for="cb17" onClick={why_dubai_handler}>
-                    <img className='icon' alt='' src={business}></img>
-                    Business
-                    </label>
-                </div>
-
-                <div className='option'>
-                    <input type="checkbox" class="btn-hidden" name="cb18" id="cb18"/>
-                    <label for="cb18" onClick={why_dubai_handler}>
-                    <img className='icon tourism-icon' alt='' src={security}></img>
-                    Security
-                    </label>
-                </div>
-                <div className='option' >
-                    <input type="checkbox" class="btn-hidden" name="cb19" id="cb19"/>
-                    <label for="cb19" onClick={why_dubai_handler}>
-                    <img className='icon' alt='' src={culture}></img>
-                    Culture
-                    </label>
-                </div>
-                </div>
-
-
-            </div>
-    
-
-         
-            <div className='next-back-div'>
-                <div className='back-btn' onClick={back_toform_v1_1}>back</div>
-            <div className='btn' onClick={to_form_v1_3}>Next</div>
-            </div>
-
-
-            </div>
-            </section>
-            {/* /////////////////////////End of formv1-2////////////////////////////////// */}
-
-
-             {/* ///////////////////////////////////////Start of form-v1-3/////////////////////////////////////////////////////////// */}
-             <section className='form-v1 form-v1-3 hide-display'>
-          
-            <div className='digg'>digg</div>
-
-            <div className='progress-div'>
-                <div id='bar3' className='progress-bar '></div>
-            </div>
-
-             <div className='questions-container'>
-
-            <div className='question-div'>
-                <div className='question'>What industries would you prefer towork in?</div>
-
-                <div className='options options-grid'>
-               {
-                   industries_list.map((element)=>{
-                       return <OPTION name={element.name}
-                       img={element.img}
-                       what_industries_handler={what_industries_handler}
-                       cb={element.cb}
-                       />
-                   })
-               }
-                </div>
-
-            </div>
-            <div className='next-back-div'>
-            <div className='back-btn' onClick={back_toform_v1_2}>back</div>
-            <div className='btn' onClick={to_form_v1_8}>Next</div>
-            </div>
-
-
-            </div>
-            </section>
-            {/* /////////////////////////End of formv1-3////////////////////////////////// */}
-
+            <FORM_V1_3
+            industries_list={industries_list}
+            back_toform_v1_2={back_toform_v1_2}
+            to_form_v1_8={to_form_v1_8}
+            what_industries_handler={what_industries_handler}
+            />
             <FORM_V1_8
              N0={N0}
              YES={YES}
