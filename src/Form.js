@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import nationality_json from './nationality.json'
 import countries_json from './countries.json'
 import {industries_list} from './industries'
-// importing the icons
+// importing some icons
 import N0 from './images/no.png'
 import YES from './images/yes.png'
 import file from './images/file.png'
-
 import life_style from './images/life_style.png'
 import Work_opportunities from './images/Work_opportunities.png'
 import education from './images/education.png'
@@ -18,9 +17,8 @@ import security from './images/security.png'
 import tourism from './images/tourism.png'
 import OPTION from './OPTION'
 import FORM_V1 from './FORM_V1'
-
-
-
+import FORM_V1_1 from './FORM_V1_1'
+import FORM_V1_8 from './FORM_V1_8'
 
 
 
@@ -29,17 +27,17 @@ export default function Form() {
     const [nationalities, setNationalities] = useState([]);
      //get countries from data
      const [countries, setCountries] = useState([]);
- 
+
     // values for form-v1
-    const [firstname, setFirstname] = useState([])
-    const [lastname, setLastname] = useState([])
-    const [birthdate, setBirthdate] = useState([])
-    const [username, setUsername] = useState([])
-    const [gender, setGender] = useState([])
-    const [nationality, setNtionality] = useState([])
-    const [countryofresidence, setCountryofresidence] = useState([])
-    const [contactnumber, setContactnumber] = useState([])
-    const [email, setEmail] = useState([])
+    const [firstname, setFirstname] = useState('')
+    const [lastname, setLastname] = useState('')
+    const [birthdate, setBirthdate] = useState('')
+    const [username, setUsername] = useState('')
+    const [gender, setGender] = useState('')
+    const [nationality, setNtionality] = useState('')
+    const [countryofresidence, setCountryofresidence] = useState('')
+    const [contactnumber, setContactnumber] = useState('')
+    const [email, setEmail] = useState('')
 
     // form-v1-1
     const [visited_dubai, setVisited_dubai] = useState('');
@@ -51,7 +49,6 @@ export default function Form() {
 
     //form-v1-3
     const [what_industries, setWhat_industries] = useState([]);
-    // list for industries
 
 
 
@@ -76,20 +73,23 @@ export default function Form() {
     }
 
     function toform_v1_1(){
-        console.log(
-            firstname+
-            lastname+
-            birthdate+
-            username+
-            gender+
-            nationality+
-            countryofresidence+
-            contactnumber+
-            email+
-            visited_dubai+any_friends+want_to_stay
-        )
+        // validation
+        if(!firstname==''&&
+            !lastname==''&&
+            !birthdate==''&&
+            !username==''&&
+            !gender==''&&
+            !nationality==''&
+            !countryofresidence==''&
+            !contactnumber==''&
+            !email=='' )    
+               {
         document.querySelector('.form-v1').classList.toggle('hide-display');
         document.querySelector('.form-v1-1').classList.toggle('hide-display');
+        }
+        else{
+            alert('all fields are mandatory')
+        }
 
     }
     function back_toform_v1_1(){
@@ -98,14 +98,14 @@ export default function Form() {
     }
     function toform_v1_2(){
         // validation
-        // if(visited_dubai && any_friends && want_to_stay){
+        if(visited_dubai && any_friends && want_to_stay){
         document.getElementById('bar2').style.width='25%'
         document.querySelector('.form-v1-1').classList.toggle('hide-display');
         document.querySelector('.form-v1-2').classList.toggle('hide-display');
-        // }
-        // else{
-            // alert('Please answer the questions')
-        // }
+        }
+        else{
+            alert('Please answer the questions')
+        }
 
     }
     function  back_toform_v1_2(){
@@ -129,10 +129,25 @@ export default function Form() {
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
 
     }
+    function to_form_v1_8() {
+        document.getElementById('bar8').style.width='95%';
+        document.querySelector('.form-v1-3').classList.toggle('hide-display');
+        document.querySelector('.form-v1-8').classList.toggle('hide-display');
+
+        
+        
+    }
+    function back_toform_v1_3() {
+        document.querySelector('.form-v1-3').classList.toggle('hide-display');
+        document.querySelector('.form-v1-8').classList.toggle('hide-display');
+    }
     
     function why_dubai_handler(e){
         if(!why_dubai.includes(e.target.textContent))
         {
+            if(why_dubai.length===-1){
+                setWhy_dubai([e.target.textContent]);
+            }
             setWhy_dubai([...why_dubai,e.target.textContent]);
         }
         else{
@@ -142,6 +157,9 @@ export default function Form() {
     function what_industries_handler(e) {
         if(!what_industries.includes(e.target.textContent))
         {
+            if(what_industries.length===-1){
+                setWhat_industries([e.target.textContent]);
+            }
             setWhat_industries([...what_industries,e.target.textContent]);
         }
         else{
@@ -170,126 +188,16 @@ export default function Form() {
             setEmail={setEmail}
             toform_v1_1={toform_v1_1}
         />
-{/* ///////////////////////////////////////Start of form-v1-1/////////////////////////////////////////////////////////// */}
-            <section className='form-v1 form-v1-1 hide-display'>
-            {/* <div className='img1-div' ></div> */}
-            <div className='digg'>digg</div>
-
-            <div className='progress-div'>
-                <div  className='progress-bar '></div>
-            </div>
-
-             <div className='questions-container'>
-
-            <div className='question-div'>
-                <div className='question'>Have you ever visited Dubai?</div>
-                <div className='options'>
-
-                    <div className='option' onClick={()=>setVisited_dubai('no')} >
-                        <input type="checkbox" class="btn-hidden" name="cb" id="cb"/>
-                        <label for="cb">
-                        <img className='icon' alt='' src={N0}></img>
-                            No
-                        </label>
-                    </div>
-
-                    <div className='option' onClick={()=>setVisited_dubai('yes')}>
-                        <input type="checkbox" class="btn-hidden" name="cb1" id="cb1"/>
-                        <label for="cb1">
-                        <img className='icon' alt='' src={YES}></img>
-                            Yes
-                        </label>
-                    </div>
-                </div>
-
-            </div>
-            <div className='question-div'>
-                <div className='question'> Do you have any friends or family in Dubai?</div>
-                <div className='options'>
-
-                    <div className='option' onClick={()=>setAny_friends('no')}>
-                        <input type="checkbox" class="btn-hidden" name="cb3" id="cb3"/>
-                        <label for="cb3">
-                        <img className='icon' alt='' src={N0}></img>
-                            No
-                        </label>
-                    </div>
-
-                    <div className='option' onClick={()=>setAny_friends('yes')}>
-                        <input type="checkbox" class="btn-hidden" name="cb4" id="cb4"/>
-                        <label for="cb4">
-                        <img className='icon' alt='' src={YES}></img>
-                            Yes
-                        </label>
-                    </div>
-                </div>
-
-            </div>
-
-            <div className='question-div'>
-                <div className='question'> How long do you want to stay in stay in Dubai?</div>
-                <div className='options'>
-
-                    <div className='option' onClick={()=>setWant_to_stay('Upto 3 months')}>
-                        <input type="checkbox" class="btn-hidden" name="cb5" id="cb5"/>
-                        <label for="cb5">
-                        <img className='icon' alt='' src={file}></img>
-                        Upto 3 months
-                        </label>
-                    </div>
-
-                    <div className='option' onClick={()=>setWant_to_stay('3 to 6 months')}>
-                        <input type="checkbox" class="btn-hidden" name="cb6" id="cb6"/>
-                        <label for="cb6">
-                        <img className='icon' alt='' src={file}></img>
-                        3 to 6 months
-                        </label>
-                    </div>
-                </div>
-
-                     <div className='options'>
-
-                    <div className='option' onClick={()=>setWant_to_stay(' 6 to 12 months')}>
-                        <input type="checkbox" class="btn-hidden" name="cb7" id="cb7"/>
-                        <label for="cb7">
-                        <img className='icon' alt='' src={file}></img>
-                        6 to 12 months
-                        </label>
-                    </div>
-
-                    <div className='option' onClick={()=>setWant_to_stay(' +12 months')}>
-                        <input type="checkbox" class="btn-hidden" name="cb8" id="cb8"/>
-                        <label for="cb8">
-                        <img className='icon' alt='' src={file}></img>
-                        +12 months
-                        </label>
-                    </div>
-                </div>
-
-                <div className='options'>
-
-                <div className='option' onClick={()=>setWant_to_stay(' +3 years')}>
-                    <input type="checkbox" class="btn-hidden" name="cb9" id="cb9"/>
-                    <label for="cb9">
-                    <img className='icon' alt='' src={file}></img>
-                    +3 years
-                    </label>
-                </div>
-
-             
-                </div>
-
-            </div>
-            <div className='next-back-div'>
-                <div className='back-btn' onClick={toform_v1_1}>back</div>
-            <div className='btn' onClick={toform_v1_2}>Next</div>
-            </div>
-
-
-            </div>
-            </section>
-            {/* /////////////////////////End of formv1-1/////////////////////////////////// */}
-
+        <FORM_V1_1
+        setVisited_dubai={setVisited_dubai}
+        N0={N0}
+        YES={YES}
+        setAny_friends={setAny_friends}
+        setWant_to_stay={setWant_to_stay}
+        toform_v1_1={toform_v1_1}
+        toform_v1_2={toform_v1_2}
+        file={file}
+        />
 
             {/* ///////////////////////////////////////Start of form-v1-2/////////////////////////////////////////////////////////// */}
             <section className='form-v1 form-v1-2 hide-display'>
@@ -437,13 +345,34 @@ export default function Form() {
             </div>
             <div className='next-back-div'>
             <div className='back-btn' onClick={back_toform_v1_2}>back</div>
-            <div className='btn' onClick={to_form_v1_3}>Next</div>
+            <div className='btn' onClick={to_form_v1_8}>Next</div>
             </div>
 
 
             </div>
             </section>
             {/* /////////////////////////End of formv1-3////////////////////////////////// */}
+
+            <FORM_V1_8
+             N0={N0}
+             YES={YES}
+            firstname={firstname}
+            lastname={lastname}
+            birthdate={birthdate}
+            gender={gender}
+            nationality={nationality}
+            countryofresidence={countryofresidence}
+            contactnumber={contactnumber}
+            email={email}
+            back_toform_v1_3={back_toform_v1_3}
+            visited_dubai={visited_dubai}
+            any_friends={any_friends}
+            want_to_stay={want_to_stay}
+            file={file}
+            why_dubai={why_dubai}
+            what_industries={what_industries}
+
+            />
         </>
     )
 }

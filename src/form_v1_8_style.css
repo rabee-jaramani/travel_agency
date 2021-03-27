@@ -1,0 +1,38 @@
+.basic-info{
+    width: 98%;
+    margin-left: 48%;
+    transform: translate(-50%);
+    background-color: #EFEFEF;
+    padding: 5px 25px;
+}
+.main-title{
+    color: #614CE5;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.label-info,.info-value{
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.form-v1-8 .next-back-div{
+    width: 70%;
+}
+.complete-btn{
+    width: 200px !important;
+    margin-left: 20px;
+}
+.final-choise{
+    padding: 11px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background:linear-gradient(to right,rgb(76,51,226),rgb(134,40,233)) !important;
+    color: #FEFEFF !important;
+    width: 150px;
+}

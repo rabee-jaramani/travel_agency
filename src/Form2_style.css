@@ -4,7 +4,7 @@
 }
 .progress-div{
     height: 10px;
-    width: 100%;
+    width: 95%;
    background-color:  #ECECEC !important ;
    border-radius: 5px;
    margin-bottom: 44px;
@@ -45,7 +45,6 @@
 }
 .question-div input[type=checkbox] + label {
   padding: 11px 10px;
-
   background-color: #EFEFEF;
   border-radius: 20px;
   font-size: 14px;

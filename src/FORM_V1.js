@@ -64,7 +64,6 @@ export default function FORM_V1(props) {
             
            <div className='btn' onClick={props.toform_v1_1}>Apply Now</div>
            <div className='img2-div' ></div>
- {/* <img id='formv1_img2' src={formv1_img2}></img> */}
            
         
             </section>

@@ -105,7 +105,7 @@ select{
     padding-top: 15px;
     cursor: pointer;
 }
-/* .img1-div{
+.img1-div{
     position: absolute;
     width: 387px;
     height: 154px;
@@ -121,7 +121,7 @@ select{
     margin-left: 30px;
     background-image: url('./images/Path\ 1000@1X.png');
     animation: img_anim2 3s   infinite;
-} */
+}
 @keyframes img_anim1{
     0%{
         right: -100px;
