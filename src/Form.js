@@ -87,21 +87,26 @@ export default function Form() {
 
     function toform_v1_1(){
         if(firstname==='' || lastname==='' ||  birthdate==='' || username==='' || 
-         nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
-               {
+            nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
+        {
                 alert('all fields are mandatory');
-                 }else
-        if(!check_regex(firstname)||!check_regex(lastname)){
+                return'';
+        }
+        if(!check_regex(firstname)||!check_regex(lastname))
+        {
             alert('Name and last name can be letters only');
+            return'';
         }
-        else{
+        if(/\D/.test(contactnumber))
+        {
+                alert('Contact number can not be a number');
+                return'';
+        }
             
-            setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},1000);
-            setTimeout(()=>{ document.querySelector('.form-v1-1').classList.toggle('hide-display')},1000);
-           document.querySelector('.f-v-1').classList.toggle('form-anim');
-           document.querySelector('.sec2').classList.toggle('hide-display');
-                   
-        }
+         setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},1000);
+          setTimeout(()=>{ document.querySelector('.form-v1-1').classList.toggle('hide-display')},1000);
+         document.querySelector('.f-v-1').classList.toggle('form-anim');
+         document.querySelector('.sec2').classList.toggle('hide-display');
 
     }
     function back_toform_v1_1(){
