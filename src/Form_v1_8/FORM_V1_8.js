@@ -126,7 +126,7 @@ export default function FORM_V1_8(props) {
                 {/* //////////////// */}
                 <div className='next-back-div'>
                 <div className='back-btn' onClick={props.back_to_form_v1_4}>back</div>
-                <div className='btn complete-btn' onClick={''}>Complete Application</div>
+                <div className='btn complete-btn' onClick={()=>alert('Your Application has been submitted.')}>Complete Application</div>
                 </div>
           </section>
         </>
