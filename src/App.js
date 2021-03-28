@@ -1,4 +1,4 @@
-import Form from './Form';
+import Form from './Form/Form.js';
 import './Form_v1/Form_v1_style.css'
 import './Form_v1_1/Form_v1_1_style.css'
 import './main_style.css'

@@ -51,13 +51,13 @@ $("input:checkbox").on('click', function() {
             
 
                 <p>Gender</p>
-                <input type="checkbox"  name='gender1'  onChange={e=>props.setGender('Male')}/>
+                <input type="checkbox"  name='gender1'  onChange={()=>props.setGender('Male')}/>
                 <label>Male</label>
 
-                <input type="checkbox" name='gender1'  onChange={e=>props.setGender('Female')}/>
+                <input type="checkbox" name='gender1'  onChange={()=>props.setGender('Female')}/>
                 <label>Female</label>
 
-                <input type="checkbox"  name='gender1' onChange={e=>props.setGender('Other')}/>
+                <input type="checkbox"  name='gender1' onChange={()=>props.setGender('Other')}/>
                 <label>Other</label>
             </div>
             <select id='nationality' onClick={props.get_nationalities} onMouseOver={props.get_nationalities}  onChange={e=>props.setNtionality(e.target.value)}>

@@ -1,29 +1,26 @@
 import React, { useState } from 'react'
 import nationality_json from './nationality.json'
 import countries_json from './countries.json'
-import {industries_list} from './industries'
+import {industries_list} from '../Form_v1_3/industries'
 // importing some icons
-import N0 from './images/no.png'
-import YES from './images/yes.png'
-import file from './images/file.png'
-import life_style from './images/life_style.png'
-import Work_opportunities from './images/Work_opportunities.png'
-import education from './images/education.png'
-import business from './images/business.png'
-import culture from './images/culture.png'
-import family from './images/family.png'
-import finance from './images/finance.png'
-import security from './images/security.png'
-import tourism from './images/tourism.png'
-import FORM_V1 from './Form_v1/FORM_V1'
-import FORM_V1_1 from './Form_v1_1/FORM_V1_1'
-import FORM_V1_8 from './Form_v1_8/FORM_V1_8'
-import FORM_V1_2 from './Form_v1_2/FORM_V1_2'
-import FORM_V1_3 from './Form_v1_3/FORM_V1_3'
-import FORM_V1_4 from './Form_v1_4/FORM_V1_4'
-
-
-
+import N0 from '../images/no.png'
+import YES from '../images/yes.png'
+import file from '../images/file.png'
+import life_style from '../images/life_style.png'
+import Work_opportunities from '../images/Work_opportunities.png'
+import education from '../images/education.png'
+import business from '../images/business.png'
+import culture from '../images/culture.png'
+import family from '../images/family.png'
+import finance from '../images/finance.png'
+import security from '../images/security.png'
+import tourism from '../images/tourism.png'
+import FORM_V1 from '../Form_v1/FORM_V1'
+import FORM_V1_1 from '../Form_v1_1/FORM_V1_1'
+import FORM_V1_8 from '../Form_v1_8/FORM_V1_8'
+import FORM_V1_2 from '../Form_v1_2/FORM_V1_2'
+import FORM_V1_3 from '../Form_v1_3/FORM_V1_3'
+import FORM_V1_4 from '../Form_v1_4/FORM_V1_4'
 
 export default function Form() {
     const [nationalities, setNationalities] = useState([]);
@@ -61,10 +58,8 @@ export default function Form() {
               for(var i in nationality_json){
                   result.push([nationality_json[i]]);
               }
-              setNationalities(result);
-             
+              setNationalities(result);     
     }
-
     function get_countries(){
         var result=[];
               for(var i in countries_json){
@@ -95,7 +90,7 @@ export default function Form() {
         if(!check_regex(firstname)||!check_regex(lastname))
         {
             alert('Name and last name can be letters only');
-            return'';
+                return'';
         }
         if(/\D/.test(contactnumber))
         {
@@ -138,8 +133,6 @@ export default function Form() {
 
     }
    
-
-
     function to_form_v1_3(){
         document.getElementById('bar3').style.width='37.5%';
         document.querySelector('.form-v1-2').classList.toggle('hide-display');
