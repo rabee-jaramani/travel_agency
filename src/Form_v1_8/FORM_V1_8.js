@@ -1,5 +1,5 @@
 import React from 'react'
-
+import edit from '../images/edit.png'
 export default function FORM_V1_8(props) {
     return (
         <>
@@ -8,7 +8,7 @@ export default function FORM_V1_8(props) {
             <div id='digg' className='digg'>digg</div>
 
             <div className='progress-div'>
-                <div id='bar8' className='progress-bar '></div>
+                <div id='bar8' className='progress-bar '><h4>Progress</h4></div>
             </div>
             <div className='question-div'>
                 <div className='question'>Complete - Review your application</div>
@@ -48,7 +48,9 @@ export default function FORM_V1_8(props) {
                     
                     <div className='main-title'>Questionnaire</div>
                     
-                    <div className='question'>Have you ever visited Dubai?</div>
+                    <div className='question'>Have you ever visited Dubai?
+                    <img className='edit-img' src={edit} alt=''/></div>
+                  
                     {
                         props.visited_dubai==='no'?
                         <div className='final-choise'>
@@ -63,10 +65,12 @@ export default function FORM_V1_8(props) {
                         
                        
                     }
-                      <div className='question'>Do you have any friends or family in Dubai?</div>
+                      <div className='question'>Do you have any friends or family in Dubai?<img className='edit-img' src={edit} alt=''/></div>
+                     
                     {
                         props.any_friends==='no'?
                         <div className='final-choise'>
+                            
                         <img src={props.N0} alt=''/>
                         <label>No</label>
                         </div>
@@ -78,40 +82,46 @@ export default function FORM_V1_8(props) {
                         
                        
                     }
-                     <div className='question'>How long do you want to stay in stay in Dubai?</div>
+                     <div className='question'>How long do you want to stay in stay in Dubai?<img className='edit-img' src={edit} alt=''/></div>
+                    
                         <div className='final-choise'>
                         <img src={props.file}alt=''/>
                         <label>{props.want_to_stay}</label>
                         </div>
 
-                        <div className='question'>Why do you want to come to Dubai?</div>
+                        <div className='question'>Why do you want to come to Dubai?<img className='edit-img' src={edit} alt=''/></div>
+                      
                         {props.why_dubai.map((el)=>{
                             return(
                              <div className='final-choise'>
                              <img src={props.file}alt=''/>
                              <label>{el}</label>
-                             {console.log('ELEMENT>> '+el)}
                              </div>
                             )
                         })}
 
-                        <div className='question'>What industries would you prefer towork in?</div>
+                       
+                        <div className='question'>What industries would you prefer towork in?<img className='edit-img' src={edit} alt=''/></div>
                         {props.what_industries.map((e)=>{
                             return(
                              <div className='final-choise'>
                              <img src={props.file}alt=''/>
                              <label>{e}</label>
-                             {console.log('ELEMENT>> '+e)}
+                            
                              </div>
                             )
                         })}
+
+                    <div className='question'>Do you have any finantial savings?
+                    <img className='edit-img' src={edit} alt=''/></div>
+                    
+                    {
+                        <div className='final-choise'>
+                        <img src={props.N0} alt=''/>
+                        <label>{props.savings}</label>
+                        </div>
+                    }
                      
-                       
-                        
-                       
-                    
-                    
-             
                 </div>
                 {/* //////////////// */}
                 <div className='next-back-div'>

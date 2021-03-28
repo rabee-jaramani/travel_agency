@@ -36,3 +36,9 @@
     color: #FEFEFF !important;
     width: 150px;
 }
+.edit-img{
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}

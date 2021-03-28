@@ -134,9 +134,13 @@ export default function Form() {
     }
    
     function to_form_v1_3(){
+        if(why_dubai.length<1){
+            alert('Please select one at least!')
+        }else{
         document.getElementById('bar3').style.width='37.5%';
         document.querySelector('.form-v1-2').classList.toggle('hide-display');
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
+        }
 
     }
     function to_form_v1_4(){
@@ -158,7 +162,7 @@ export default function Form() {
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
         document.querySelector('.form-v1-4').classList.toggle('hide-display');
     }
-    
+
     function why_dubai_handler(e){
         if(!why_dubai.includes(e.target.textContent))
         {
@@ -168,12 +172,13 @@ export default function Form() {
             setWhy_dubai([...why_dubai,e.target.textContent]);
         }
         else{
-            console.log(why_dubai)
+            
         }   
+       
     }
     
     function savings_handler(e) {
-        if(!savings.includes(e.target.textContent))
+         if(!savings.includes(e.target.textContent))
         {
             if(savings.length===-1){
                 setSavings([e.target.textContent]);
@@ -193,7 +198,8 @@ export default function Form() {
             setWhat_industries([...what_industries,e.target.textContent]);
         }
         else{
-            console.log(what_industries)
+
+
         }   
     }
     function backToform_v1(){
@@ -277,7 +283,7 @@ export default function Form() {
             file={file}
             why_dubai={why_dubai}
             what_industries={what_industries}
-
+            savings={savings}
             />
         </>
     )
