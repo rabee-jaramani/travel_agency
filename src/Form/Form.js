@@ -94,7 +94,7 @@ export default function Form() {
         }
         if(/\D/.test(contactnumber))
         {
-                alert('Contact number can not be a number');
+                alert('Contact number can not be a LETTERS');
                 return'';
         }
             
