@@ -14,7 +14,7 @@ export default function FORM_V1_1(props) {
 
              <div className='questions-container'>
 
-            <div className='question-div'>
+            <div  className='question-div visited-dubai'>
                 <div className='question'>Have you ever visited Dubai?</div>
                 <div className='options'>
 
@@ -36,7 +36,7 @@ export default function FORM_V1_1(props) {
                 </div>
 
             </div>
-            <div className='question-div'>
+            <div className='question-div visited-dubai'>
                 <div className='question'> Do you have any friends or family in Dubai?</div>
                 <div className='options'>
 
@@ -59,9 +59,9 @@ export default function FORM_V1_1(props) {
 
             </div>
 
-            <div className='question-div'>
+            <div className='question-div visited-dubai'>
                 <div className='question'> How long do you want to stay in stay in Dubai?</div>
-                <div className='options'>
+                <div className='options options-grid'>
 
                     <div className='option' onClick={()=>props.setWant_to_stay('Upto 3 months')}>
                         <input type="checkbox" class="btn-hidden" name="cb5" id="cb5"/>
@@ -78,9 +78,9 @@ export default function FORM_V1_1(props) {
                         3 to 6 months
                         </label>
                     </div>
-                </div>
+               
 
-                     <div className='options'>
+                
 
                     <div className='option' onClick={()=>props.setWant_to_stay(' 6 to 12 months')}>
                         <input type="checkbox" class="btn-hidden" name="cb5" id="cb7"/>
@@ -97,9 +97,9 @@ export default function FORM_V1_1(props) {
                         +12 months
                         </label>
                     </div>
-                </div>
+               
 
-                <div className='options'>
+                
 
                 <div className='option' onClick={()=>props.setWant_to_stay(' +3 years')}>
                     <input type="checkbox" class="btn-hidden" name="cb5" id="cb9"/>

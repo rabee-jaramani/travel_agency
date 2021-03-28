@@ -8,15 +8,15 @@ export default function FORM_V1_2(props) {
             {/* <div className='img1-div' ></div> */}
             <div className='digg'>digg</div>
 
-            <div className='progress-div'>
+            <div className='progress-div visited-dubai'>
                 <div id='bar2' className='progress-bar '><h4>Progress</h4></div>
             </div>
 
              <div className='questions-container'>
 
-            <div className='question-div'>
+            <div className='question-div visited-dubai'>
                 <div className='question'>Why do you want to come to dubai?</div>
-                <div className='options'>
+                <div className='options options-grid'>
 
                     <div className='option'  >
                         <input type="checkbox" class="btn-hidden" name="cb10" id="cb10"/>
@@ -33,9 +33,7 @@ export default function FORM_V1_2(props) {
                         Work opportunities
                         </label>
                     </div>
-                </div>
-                <div className='options'>
-
+          
                 <div className='option'  >
                     <input type="checkbox" class="btn-hidden" name="cb12" id="cb12"/>
                     <label for="cb12" onClick={props.why_dubai_handler}>
@@ -52,8 +50,7 @@ export default function FORM_V1_2(props) {
                     </label>
                 </div>
                 
-                </div>
-                <div className='options'>
+           
 
                 <div className='option' >
                     <input type="checkbox" class="btn-hidden" name="cb14" id="cb14"/>
@@ -77,9 +74,7 @@ export default function FORM_V1_2(props) {
                     Family
                     </label>
                 </div>
-               </div>
-
-               <div className='options'>
+               
                <div className='option' >
                     <input type="checkbox" class="btn-hidden" name="cb17" id="cb17"/>
                     <label for="cb17" onClick={props.why_dubai_handler}>

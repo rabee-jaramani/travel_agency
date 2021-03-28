@@ -24,9 +24,27 @@
         padding-top: 15px;
         cursor: pointer;
     }
+    .visited-dubai input[type=checkbox] + label {
+        padding: 15px 8px !important;
+        font-size: 16px !important;
+        margin: 10px 0 20px 5px !important;
+
+      } 
+      .question{
+        margin: 70px 0 30px 20px !important;
+        font-weight: 600;
+    }
+    .options-grid{
+      
+        grid-template-columns: repeat( 8, minmax(190px, 1.5fr) ) !important;
+        grid-template-rows: 60px 60px 60px !important;
+   
+        
+    }
+
  
 }
-
+/* /////////////////////////////////////Mobile View */
 .form-v1-1{
     position: absolute;
 
@@ -57,6 +75,7 @@
 }
 .question{
     margin-bottom: 15px;
+    letter-spacing: .02vw;
     font-weight: 600;
 }
 .options{
@@ -100,6 +119,7 @@
     display: flex;
     width: 250px;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 .back-btn{
     margin-top: 45px;
