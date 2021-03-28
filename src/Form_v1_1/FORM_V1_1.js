@@ -1,6 +1,6 @@
 import React from 'react'
-
 export default function FORM_V1_1(props) {
+
     return (
         <>
            <section className='form-v1 form-v1-1 hide-display'>
@@ -27,7 +27,7 @@ export default function FORM_V1_1(props) {
                     </div>
 
                     <div className='option' onClick={()=>props.setVisited_dubai('yes')}>
-                        <input type="checkbox" class="btn-hidden" name="cb1" id="cb1"/>
+                        <input type="checkbox" class="btn-hidden" name="cb" id="cb1"/>
                         <label for="cb1">
                         <img className='icon' alt='' src={props.YES}></img>
                             Yes
@@ -49,7 +49,7 @@ export default function FORM_V1_1(props) {
                     </div>
 
                     <div className='option' onClick={()=>props.setAny_friends('yes')}>
-                        <input type="checkbox" class="btn-hidden" name="cb4" id="cb4"/>
+                        <input type="checkbox" class="btn-hidden" name="cb3" id="cb4"/>
                         <label for="cb4">
                         <img className='icon' alt='' src={props.YES}></img>
                             Yes
@@ -72,7 +72,7 @@ export default function FORM_V1_1(props) {
                     </div>
 
                     <div className='option' onClick={()=>props.setWant_to_stay('3 to 6 months')}>
-                        <input type="checkbox" class="btn-hidden" name="cb6" id="cb6"/>
+                        <input type="checkbox" class="btn-hidden" name="cb5" id="cb6"/>
                         <label for="cb6">
                         <img className='icon' alt='' src={props.file}></img>
                         3 to 6 months
@@ -83,7 +83,7 @@ export default function FORM_V1_1(props) {
                      <div className='options'>
 
                     <div className='option' onClick={()=>props.setWant_to_stay(' 6 to 12 months')}>
-                        <input type="checkbox" class="btn-hidden" name="cb7" id="cb7"/>
+                        <input type="checkbox" class="btn-hidden" name="cb5" id="cb7"/>
                         <label for="cb7">
                         <img className='icon' alt='' src={props.file}></img>
                         6 to 12 months
@@ -91,7 +91,7 @@ export default function FORM_V1_1(props) {
                     </div>
 
                     <div className='option' onClick={()=>props.setWant_to_stay(' +12 months')}>
-                        <input type="checkbox" class="btn-hidden" name="cb8" id="cb8"/>
+                        <input type="checkbox" class="btn-hidden" name="cb5" id="cb8"/>
                         <label for="cb8">
                         <img className='icon' alt='' src={props.file}></img>
                         +12 months
@@ -102,7 +102,7 @@ export default function FORM_V1_1(props) {
                 <div className='options'>
 
                 <div className='option' onClick={()=>props.setWant_to_stay(' +3 years')}>
-                    <input type="checkbox" class="btn-hidden" name="cb9" id="cb9"/>
+                    <input type="checkbox" class="btn-hidden" name="cb5" id="cb9"/>
                     <label for="cb9">
                     <img className='icon' alt='' src={props.file}></img>
                     +3 years

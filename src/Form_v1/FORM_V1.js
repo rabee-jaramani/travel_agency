@@ -1,6 +1,29 @@
 import React from 'react'
+import { $ }  from 'react-jquery-plugin'
 
 export default function FORM_V1(props) {
+    // $(document).ready(function(){
+    //     $('input:checkbox').click(function() {
+    //         $('input:checkbox').not(this).prop('checked', false);
+    //     });
+    // });
+    // the selector will match all input controls of type :checkbox
+// and attach a click event handler 
+$("input:checkbox").on('click', function() {
+    // in the handler, 'this' refers to the box clicked on
+    var $box = $(this);
+    if ($box.is(":checked")) {
+      // the name of the box is retrieved using the .attr() method
+      // as it is assumed and expected to be immutable
+      var group = "input:checkbox[name='" + $box.attr("name") + "']";
+      // the checked state of the group/box on the other hand will change
+      // and the current value is retrieved using .prop() method
+      $(group).prop("checked", false);
+      $box.prop("checked", true);
+    } else {
+      $box.prop("checked", false);
+    }
+  });
     return (
         <>
             <section className='form-v1 f-v-1' id='form-v1'>
@@ -25,14 +48,16 @@ export default function FORM_V1(props) {
                 <label>User name</label>
             </div>
             <div className='gender-div'>
+            
+
                 <p>Gender</p>
-                <input type="checkbox" onChange={e=>props.setGender('Male')}/>
+                <input type="checkbox"  name='gender1'  onChange={e=>props.setGender('Male')}/>
                 <label>Male</label>
 
-                <input type="checkbox" onChange={e=>props.setGender('Female')}/>
+                <input type="checkbox" name='gender1'  onChange={e=>props.setGender('Female')}/>
                 <label>Female</label>
 
-                <input type="checkbox" onChange={e=>props.setGender('Other')}/>
+                <input type="checkbox"  name='gender1' onChange={e=>props.setGender('Other')}/>
                 <label>Other</label>
             </div>
             <select id='nationality' onClick={props.get_nationalities} onMouseOver={props.get_nationalities}  onChange={e=>props.setNtionality(e.target.value)}>

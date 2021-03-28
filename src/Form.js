@@ -86,22 +86,22 @@ export default function Form() {
     }
 
     function toform_v1_1(){
-        // if(firstname==='' || lastname==='' ||  birthdate==='' || username==='' || gender==='' || 
-        //  nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
-        //        {
-        //         alert('all fields are mandatory');
-        //          }else
-        // if(!check_regex(firstname)||!check_regex(lastname)){
-        //     alert('Name and last name can be letters only');
-        // }
-        // else{
+        if(firstname==='' || lastname==='' ||  birthdate==='' || username==='' || 
+         nationality===''||  countryofresidence===''||  contactnumber===''||  email==='' )    
+               {
+                alert('all fields are mandatory');
+                 }else
+        if(!check_regex(firstname)||!check_regex(lastname)){
+            alert('Name and last name can be letters only');
+        }
+        else{
             
             setTimeout(()=>{document.querySelector('.form-v1').classList.toggle('hide-display')},1000);
             setTimeout(()=>{ document.querySelector('.form-v1-1').classList.toggle('hide-display')},1000);
            document.querySelector('.f-v-1').classList.toggle('form-anim');
            document.querySelector('.sec2').classList.toggle('hide-display');
                    
-        // }
+        }
 
     }
     function back_toform_v1_1(){
@@ -148,11 +148,11 @@ export default function Form() {
     }
     function back_to_form_v1_4(){
         document.querySelector('.form-v1-4').classList.toggle('hide-display');
-        document.querySelector('.form-v1-5').classList.toggle('hide-display');
+        document.querySelector('.form-v1-8').classList.toggle('hide-display');
     }
     function to_form_v1_8() {
         document.getElementById('bar8').style.width='95%';
-        document.querySelector('.form-v1-3').classList.toggle('hide-display');
+        document.querySelector('.form-v1-4').classList.toggle('hide-display');
         document.querySelector('.form-v1-8').classList.toggle('hide-display');
 
     }
@@ -272,7 +272,7 @@ export default function Form() {
             countryofresidence={countryofresidence}
             contactnumber={contactnumber}
             email={email}
-            back_toform_v1_3={back_toform_v1_3}
+            back_to_form_v1_4={back_to_form_v1_4}
             visited_dubai={visited_dubai}
             any_friends={any_friends}
             want_to_stay={want_to_stay}

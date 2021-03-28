@@ -24,6 +24,7 @@ export default function FORM_V1_4(props) {
                      img={element.img}
                      savings_handler={props.savings_handler}
                      cb={element.cb}
+                     chk_name={element.chk_name}
                      />
                  })
              }
