@@ -11,3 +11,5 @@ npm i -g npx
 npm i
 npm install --save react-jquery-plugin
 npm start
+
+Thank You...
