@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import nationality_json from './nationality.json'
 import countries_json from './countries.json'
 import {industries_list} from '../Form_v1_3/industries'
@@ -110,14 +110,14 @@ export default function Form() {
     }
     function toform_v1_2(){
         // validation
-        if(visited_dubai && any_friends && want_to_stay){
+        // if(visited_dubai && any_friends && want_to_stay){
         document.getElementById('bar2').style.width='25%'
         document.querySelector('.form-v1-1').classList.toggle('hide-display');
         document.querySelector('.form-v1-2').classList.toggle('hide-display');
-        }
-        else{
-            alert('Please answer the questions')
-        }
+        // }
+        // else{
+            // alert('Please answer the questions')
+        // }
 
     }
     function  back_toform_v1_2(){
@@ -134,20 +134,16 @@ export default function Form() {
     }
    
     function to_form_v1_3(){
-        if(why_dubai.length<1){
-            alert('Please select one at least!')
-        }else{
+        // if(why_dubai.length<1){
+        //     alert('Please select one at least!')
+        // }else{
         document.getElementById('bar3').style.width='37.5%';
         document.querySelector('.form-v1-2').classList.toggle('hide-display');
         document.querySelector('.form-v1-3').classList.toggle('hide-display');
-        }
+        // }
 
     }
-    function to_form_v1_4(){
-        document.getElementById('bar4').style.width='50%';
-        document.querySelector('.form-v1-3').classList.toggle('hide-display');
-        document.querySelector('.form-v1-4').classList.toggle('hide-display');
-    }
+
     function back_to_form_v1_4(){
         document.querySelector('.form-v1-4').classList.toggle('hide-display');
         document.querySelector('.form-v1-8').classList.toggle('hide-display');
@@ -171,9 +167,7 @@ export default function Form() {
             }
             setWhy_dubai([...why_dubai,e.target.textContent]);
         }
-        else{
-            
-        }   
+   
        
     }
     
@@ -189,18 +183,45 @@ export default function Form() {
             console.log(savings)
         }   
     }
-    function what_industries_handler(e) {
-        if(!what_industries.includes(e.target.textContent))
-        {
-            if(what_industries.length===-1){
-                setWhat_industries([e.target.textContent]);
-            }
-            setWhat_industries([...what_industries,e.target.textContent]);
+
+    function to_form_v1_4(){
+        if(what_industries.length === 0){
+            alert('Please select at least one answer');
         }
         else{
+            console.log('what_industries from next '+ what_industries)
+        document.getElementById('bar4').style.width='50%';
+        document.querySelector('.form-v1-3').classList.toggle('hide-display');
+        document.querySelector('.form-v1-4').classList.toggle('hide-display');
+        }
+    }
 
-
-        }   
+    function what_industries_handler(e) {
+        const item=e.target.textContent;
+        const img=return_the_img(item,industries_list);
+            if(what_industries.length===0){
+                setWhat_industries([[item,img]]); 
+            }
+            else{
+                var temp_list=what_industries;
+                if(temp_list.some(row => row.includes(item))){
+                   for (let j = 0; j < temp_list.length; j++) {
+                       if(temp_list[j][0]===item){
+                           var index=temp_list[j].indexOf(item);
+                           temp_list.splice(index,1);
+                           setWhat_industries(temp_list);   
+                           
+                       }
+                       
+                   }
+                    
+                   
+                }
+                else{
+                    temp_list.push([item,img])
+                    setWhat_industries(temp_list);
+                }  
+            }
     }
     function backToform_v1(){
         document.querySelector('.form-v1').classList.toggle('hide-display');
@@ -208,6 +229,19 @@ export default function Form() {
        document.querySelector('.f-v-1').classList.toggle('form-anim');
        document.querySelector('.sec2').classList.toggle('hide-display');
     }
+useEffect(() => {
+    console.log('what_industries from use effect '+what_industries)
+    
+}, [what_industries])
+
+function return_the_img(item,list){
+for (let i = 0; i < list.length; i++) {
+    if(list[i].name===item){
+        return list[i].img;
+    }
+}
+}
+
     return (
         <>
         <FORM_V1

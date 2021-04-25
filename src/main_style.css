@@ -5,9 +5,8 @@
     margin: 0;
     font-family: sans-serif;
 }
-body{
-    /* overflow: hidden; */
-
+.hide{
+    display: none;
 }
 .App{
     width: 100%;

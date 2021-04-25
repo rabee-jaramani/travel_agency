@@ -23,7 +23,7 @@ export default function FORM_V1_3(props) {
                    props.industries_list.map((element)=>{
                        return <OPTION name={element.name}
                        img={element.img}
-                       what_industries_handler={props.what_industries_handler}
+                       on_click={props.what_industries_handler}
                        cb={element.cb}
                        chk_name={element.chk_name}
                        />
